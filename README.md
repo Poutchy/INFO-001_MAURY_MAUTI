@@ -7,7 +7,7 @@
 
 **Question 1:**
 
-1. Calcul de chiffrement des messages en utilisant RSA: $M = C^d(mod n)$
+1. Calcul de chiffrement des messages en utilisant RSA: $M = C^d(mod \space n)$
 2. La méthode de Diffie-Hellman permet la vérification d'identité dans un système.
 3. Un certificat contient la signature du fournisseur de certificat, la clé publique de la cible du certificat, l'adresse de la machine contenant la clé privé de la cible du certificat et les infos de vérification.
 4. étapes:
