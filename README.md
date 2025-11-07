@@ -64,9 +64,9 @@ L'organisation qui a fourni le contrat est GEANT Verenining.
 16.  Le certificat a été signé par GEANT Vereniging. La formule de calcul de la signature présente dans le certificat est $S=E(H(M))$.
 17. Le sujet de ce certificat est GEANT Vereniging. La taille de la clé publique du certificat est de 4096 bits. Il a été signé par USERTrust RSA Certification Authority.
 18. 
-Université Grenoble Alpes
-    └──GEANT Vereniging
-        └── The USERTRUST Network
+Université Grenoble Alpes\
+    └──GEANT Vereniging\
+        └── The USERTRUST Network\
             └──Comodo
 
 Le certificat permettant de valider celui de "The USERTRUST Network" (n2) est le certificat de "Comodo" et se trove dans le système.
