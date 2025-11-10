@@ -77,3 +77,31 @@ Dans le cas d’un certificat racine auto-signé, l’émetteur et le sujet sont
 
 
 CA RACINE: 192.168.170.178
+
+19. $Signature=Sign_{clé \space privé \space de \space l'émetteur}(HASH(TBSCertificate))$
+TBSCertificate = “To Be Signed Certificate”, c’est la partie du certificat qui contient les infos : Subject, Public Key, Validity, Extensions…
+Dans le cas d’un certificat racine auto-signé, l’émetteur et le sujet sont identiques, donc on signe avec sa propre clé privée.
+
+20. Le type de clé utilisé est une courbe elliptique, avec une taille de 256 bits. La courbe utilisé est la p-256.
+La durée de validité est d'environ 20 ans. 
+$Issuer == Subject \rightarrow Certificat\space auto\text{-}signé$. 
+Cette autorité de certifcation peut être utilisée par Digital Signature, Certificate Sign et CRL Sign.
+
+21. Pour le paramètre dir, on a mis "/home/etudiant/ca".
+Pour la clé privée de la CA on la stocke dans le dossier "/home/etudiant/ca/private" sous le nom "intermediate.key.pem"
+Pour le certificat de la CA on la stocke dans le dossier "/home/etudiant/ca/certs" sous le nom "intermediate.cert.pem"
+
+22. La commande est 
+```bash
+openssl genpkey \
+  -algorithm EC \
+  -pkeyopt ec_paramgen_curve:prime256v1 \
+  -aes-128-cbc \
+  -pass pass:mauryco\
+  -out private/intermediate.key.pem
+```
+
+23. La signature présente dans la demande peut sembler incongrue puisqu’on n’a pas encore fait signer le certificat par la CA.
+Cependant, cette signature sert à authentifier la CSR : elle prouve que le demandeur possède réellement la clé privée correspondante à la clé publique présente dans la demande, empêchant ainsi l'usurpation de clé.
+
+24. La clé de chiffrement asymétrique pour le serveur doit être générer sur le serveur.
