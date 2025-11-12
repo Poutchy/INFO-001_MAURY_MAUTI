@@ -105,3 +105,10 @@ openssl genpkey \
 Cependant, cette signature sert à authentifier la CSR : elle prouve que le demandeur possède réellement la clé privée correspondante à la clé publique présente dans la demande, empêchant ainsi l'usurpation de clé.
 
 24. La clé de chiffrement asymétrique pour le serveur doit être générer sur le serveur.
+
+25. Le fait de faire confiance à un certificat intermédiaire est contre intuitif car cela veut dire que nous ne faisons pas confiance aux certificats supérieurs.
+
+26. La ligne a ajouté pour la correspondance est 
+```bash
+127.0.0.1 www.mauryco.fr
+```
